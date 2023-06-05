@@ -1,0 +1,26 @@
+textarea {
+  margin: 10px 10px;
+  min-height: 26vh;
+  min-width: 60vh;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+button {
+  margin: 0 14px 30px;
+  padding: 4px;
+  margin-right: 2px;
+  font-size: 18px;
+  border: 2px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s, font-size 0.2s;
+}
+
+button:hover {
+  background-color: rgb(207, 205, 205);
+}
+button:active {
+  font-size: 16px;
+}
