@@ -4,7 +4,7 @@
   background-color: gray;
   padding: 5em 0.7em;
   margin: 10px 10px;
-  max-width: 11rem;
+  max-width: 10rem;
   max-height: 380px;
 }
 
@@ -14,12 +14,21 @@
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: text-shadow 0.1s, border-bottom;
+  transition: text-shadow 0.1s, color;
 }
 
 .item:hover {
-  text-shadow: 4px 8px 8px rgb(27, 22, 22);
+  text-shadow: 4px 8px 8px rgb(14, 12, 12);
 }
 .item:active {
-  border-bottom: 1px solid white;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.active {
+  color: rgb(29, 28, 26);
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: text-shadow 0.2s, color 0.2s;
 }
