@@ -23,7 +23,20 @@ section {
 }
 
 .list li {
-  margin: 20px 0 50px 20px;
+  margin: 20px 0 30px 20px;
+}
+
+.item {
+  color: rgb(39, 39, 44);
+  font-weight: 700;
+  transition: font-weight 0.2s, font-size 0.2s;
+  text-decoration: none;
+}
+
+.active {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .messages {
