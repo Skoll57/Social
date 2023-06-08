@@ -36,6 +36,8 @@ const Nav = () => {
           Music
         </NavLink>
       </div>
+      <br />
+      <br />
       <div>
         <NavLink
           className={(navData) => (navData.isActive ? s.active : s.item)}

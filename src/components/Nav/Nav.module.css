@@ -2,7 +2,7 @@
   box-sizing: border-box;
   grid-area: nav;
   background-color: gray;
-  padding: 5em 0.7em;
+  padding: 16px 20px 16px 5px;
   margin: 10px 10px;
   max-width: 10rem;
   max-height: 380px;
@@ -31,4 +31,8 @@
   cursor: pointer;
   text-decoration: none;
   transition: text-shadow 0.2s, color 0.2s;
+}
+
+span {
+  margin-top: 50px;
 }

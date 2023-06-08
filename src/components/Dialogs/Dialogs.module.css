@@ -5,33 +5,42 @@ section {
   height: 100%;
 }
 
-.Dialogs {
-  /* background-color: blanchedalmond; */
-
-  width: 60vh;
-  padding: 10px 10px;
-  text-transform: uppercase;
+.dialogs {
+  width: 50vh;
+  padding: 10px 0;
   border-right: 2px solid rgb(141, 131, 131);
   color: rgb(46, 42, 42);
   font-size: 16px;
   font-weight: 700;
 }
 
-.List {
+.dialogs h3 {
+  text-transform: uppercase;
+}
+
+.list {
   padding: 8px 0 8px 2px;
 }
 
-.List li {
+.list li {
   margin: 20px 0 50px 20px;
 }
 
-.Messages {
-  /* background-color: black; */
+.messages {
   box-sizing: border-box;
   width: 100%;
   padding: 10px 10px;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
   color: black;
   padding-left: 20px;
+}
+
+.messages h3 {
+  text-transform: uppercase;
+}
+
+.message {
+  padding: 8px 0 2px 2px;
+  margin: 40px 16px 16px 16px;
 }
