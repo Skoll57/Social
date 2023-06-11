@@ -1,15 +1,11 @@
 import s from "./MainContent.module.css";
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Main = () => {
   return (
-    <div>
-      <div>
-        <img
-          className={s.image}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRe5xJrGwCVXglXv9U0mxjA0ROxWeZlgQhyQ&usqp=CAU"
-        ></img>
-      </div>
+    <div className={s.main}>
+      <ProfileInfo />
       <MyPosts />
     </div>
   );

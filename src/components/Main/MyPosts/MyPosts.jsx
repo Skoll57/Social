@@ -1,20 +1,15 @@
-import "./MyPosts.module.css";
+import s from "./MyPosts.module.css";
 import Post from "./Posts/Post";
 
 const MyPosts = () => {
   return (
     <div>
-      My posts
+      <div className={s.header}>My posts:</div>
       <div>
         <textarea></textarea>
       </div>
-      <div>
-        <span>
-          <button>Add Post</button>
-        </span>
-        <span>
-          <button>Remove</button>
-        </span>
+      <div className={s.btnSection}>
+        <button>Add Post</button>
       </div>
       <div>
         <Post message="Hi! What are you doing?" count="1" />
