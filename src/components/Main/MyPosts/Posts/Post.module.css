@@ -1,11 +1,25 @@
-.item {
-  font-size: 30px;
+.post {
   padding: 10px;
   margin: 10px;
+  border: 1px solid black;
 }
 
-.item img {
+.imgAndMessage {
+  display: flex;
+  gap: 20px;
+}
+
+.image {
+  max-width: 100px;
+}
+.image img {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: 600;
+  margin: auto;
 }

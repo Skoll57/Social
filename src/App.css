@@ -1,6 +1,6 @@
 .App-wrapper {
   max-width: 1230px;
-  margin: 10px auto;
+  margin: 10px 20px;
   box-sizing: border-box;
   display: grid;
   grid-template-areas:
@@ -8,12 +8,10 @@
     "nav main";
   grid-template-rows: 60px 1fr;
   grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
 }
 
 .app-wrapper-content {
   grid-area: main;
-  /* background-color: cyan; */
   margin: 10px 10px;
   box-sizing: border-box;
 }

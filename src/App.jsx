@@ -12,10 +12,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="App-wrapper">
-        {/* Отрисовываю новую компоненту без экспорта, с помощью тега */}
         <Header />
         <Nav />
-        {/* Див-шаблон для многостраничности, куда можно вставлять любую Main-компоненту с изменяемым центровым контентом */}
         <div className="app-wrapper-content">
           <Routes>
             <Route path="/profile" element={<Main />} />
