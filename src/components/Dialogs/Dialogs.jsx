@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import s from "./Dialogs.module.css";
 
+// Template
 const DialogItem = (props) => {
   return (
     <div>
@@ -19,7 +20,8 @@ const MessageItem = (props) => {
 };
 
 const Dialogs = () => {
-  let dialogsData = [
+  // Data
+  let dialogs = [
     { id: 1, name: "Skoll" },
     { id: 2, name: "Ivan" },
     { id: 3, name: "Julia" },
@@ -28,42 +30,33 @@ const Dialogs = () => {
     { id: 6, name: "Elen" },
   ];
 
-  let messagesData = [
+  let messages = [
     { id: 1, message: "HI" },
     { id: 2, message: "HELLO" },
     { id: 3, message: "HEY" },
   ];
+  // Mapping
+  let itemDialogs = dialogs.map((dialog) => {
+    return (
+      <li>
+        <DialogItem name={dialog.name} id={dialog.id} />
+      </li>
+    );
+  });
 
+  let itemMessages = messages.map((message) => {
+    return <MessageItem messageText={message.message} />;
+  });
+  //Return
   return (
     <section>
       <div className={s.dialogs}>
         <h3>Dialogs</h3>
-        <ul className={s.list}>
-          <li>
-            <DialogItem name={dialogsData[0].name} id={dialogsData[0].id} />
-          </li>
-          <li>
-            <DialogItem name={dialogsData[1].name} id={dialogsData[1].id} />
-          </li>
-          <li>
-            <DialogItem name={dialogsData[2].name} id={dialogsData[2].id} />
-          </li>
-          <li>
-            <DialogItem name={dialogsData[3].name} id={dialogsData[3].id} />
-          </li>
-          <li>
-            <DialogItem name={dialogsData[4].name} id={dialogsData[4].id} />
-          </li>
-          <li>
-            <DialogItem name={dialogsData[5].name} id={dialogsData[5].id} />
-          </li>
-        </ul>
+        <ul className={s.list}>{itemDialogs}</ul>
       </div>
       <div className={s.messages}>
         <h3>Messages</h3>
-        <MessageItem messageText={messagesData[0].message} />
-        <MessageItem messageText={messagesData[1].message} />
-        <MessageItem messageText={messagesData[2].message} />
+        {itemMessages}
       </div>
     </section>
   );

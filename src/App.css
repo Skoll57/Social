@@ -1,6 +1,6 @@
 .App-wrapper {
   max-width: 1230px;
-  margin: 10px 20px;
+  margin: 10px 10px;
   box-sizing: border-box;
   display: grid;
   grid-template-areas:
