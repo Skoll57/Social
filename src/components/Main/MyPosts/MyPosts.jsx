@@ -2,6 +2,7 @@ import s from "./MyPosts.module.css";
 import Post from "./Posts/Post";
 
 const MyPosts = () => {
+  //Data
   let posts = [
     { message: "Hi! What are you doing?", likeCount: 13, dislikeCount: 3 },
     { message: "Hello! I'am testing props.", likeCount: 23, dislikeCount: 5 },
@@ -14,7 +15,7 @@ const MyPosts = () => {
     },
     { message: "I'm happy for you!", likeCount: 1, dislikeCount: 0 },
   ];
-
+  //Mapping
   let itemPost = posts.map((post) => {
     return (
       <Post
@@ -24,7 +25,7 @@ const MyPosts = () => {
       />
     );
   });
-
+  //Return
   return (
     <div>
       <div className={s.header}>My posts:</div>
