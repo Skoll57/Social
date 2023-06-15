@@ -12,6 +12,12 @@ const Nav = () => {
           Profile
         </NavLink>
       </div>
+      <NavLink
+        className={(navData) => (navData.isActive ? s.active : s.item)}
+        to="/friend"
+      >
+        Friend
+      </NavLink>
       <div>
         <NavLink
           className={(navData) => (navData.isActive ? s.active : s.item)}
@@ -20,14 +26,7 @@ const Nav = () => {
           Messages
         </NavLink>
       </div>
-      <div>
-        <NavLink
-          className={(navData) => (navData.isActive ? s.active : s.item)}
-          to="/friend"
-        >
-          Friend
-        </NavLink>
-      </div>
+      <div></div>
       <div>
         <NavLink
           className={(navData) => (navData.isActive ? s.active : s.item)}
