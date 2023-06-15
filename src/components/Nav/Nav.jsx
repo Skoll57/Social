@@ -23,9 +23,9 @@ const Nav = () => {
       <div>
         <NavLink
           className={(navData) => (navData.isActive ? s.active : s.item)}
-          to="/news"
+          to="/friend"
         >
-          News
+          Friend
         </NavLink>
       </div>
       <div>
@@ -34,6 +34,14 @@ const Nav = () => {
           to="/music"
         >
           Music
+        </NavLink>
+      </div>
+      <div>
+        <NavLink
+          className={(navData) => (navData.isActive ? s.active : s.item)}
+          to="/news"
+        >
+          News
         </NavLink>
       </div>
       <br />

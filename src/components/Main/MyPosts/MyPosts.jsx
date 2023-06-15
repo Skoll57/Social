@@ -17,7 +17,7 @@ const MyPosts = (props) => {
   return (
     <div>
       <div className={s.header}>My posts:</div>
-      <textarea></textarea>
+      <textarea placeholder="write somthing..."></textarea>
       <div className={s.btnSection}>
         <button className={s.button}>Add Post</button>
       </div>
