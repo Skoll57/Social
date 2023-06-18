@@ -5,25 +5,23 @@ section {
   height: 100%;
 }
 
+h3 {
+  text-transform: uppercase;
+}
+
 .dialogs {
-  width: 50vh;
-  padding: 10px 0;
+  min-width: 20vh;
+  padding: 10px 20px;
   border-right: 2px solid rgb(141, 131, 131);
   color: rgb(46, 42, 42);
   font-size: 16px;
   font-weight: 700;
 }
 
-.dialogs h3 {
-  text-transform: uppercase;
-}
-
-.list {
-  padding: 8px 0 8px 2px;
-}
-
-.list li {
-  margin: 20px 0 30px 20px;
+.item {
+  margin: 10px auto;
+  list-style-type: none;
+  color: black;
 }
 
 .messages {

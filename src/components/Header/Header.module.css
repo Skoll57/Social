@@ -1,10 +1,9 @@
 .header {
-  box-sizing: border-box;
   grid-area: header;
   background-color: rgb(42, 97, 199);
 }
 
-.signature {
+.header__title {
   font-weight: 800;
   color: bisque;
   font-size: 2em;

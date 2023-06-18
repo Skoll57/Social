@@ -4,10 +4,14 @@ import MessageItem from "./MessageItem/MessageItem";
 
 const Dialogs = (props) => {
   // Mapping
-  let itemDialogs = props.state.dialogs.map((dialog) => {
+  let itemDialogs = props.state.persone.map((persone) => {
     return (
       <li>
-        <DialogItem name={dialog.name} id={dialog.id} />
+        <DialogItem
+          name={persone.fullName}
+          id={persone.id}
+          avatar={persone.avatar}
+        />
       </li>
     );
   });
@@ -21,8 +25,9 @@ const Dialogs = (props) => {
     <section>
       <div className={s.dialogs}>
         <h3>Dialogs</h3>
-        <ul className={s.list}>{itemDialogs}</ul>
+        <div className={s.item}>{itemDialogs}</div>
       </div>
+
       <div className={s.messages}>
         <h3>Messages</h3>
         {itemMessages}

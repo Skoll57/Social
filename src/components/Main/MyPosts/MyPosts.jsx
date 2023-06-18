@@ -1,8 +1,7 @@
-import s from "./MyPosts.module.css";
+import styles from "./MyPosts.module.css";
 import Post from "./Posts/Post";
 
 const MyPosts = (props) => {
-  //Mapping
   let itemPost = props.posts.map((post) => {
     return (
       <Post
@@ -13,16 +12,24 @@ const MyPosts = (props) => {
     );
   });
 
-  //Return
   return (
-    <div>
-      <div className={s.header}>My posts:</div>
-      <textarea placeholder="write somthing..."></textarea>
-      <div className={s.btnSection}>
-        <button className={s.button}>Add Post</button>
+    <section className={styles.main}>
+      <div className={styles.main__wallSection}>
+        <h2 className={styles.main__title}>My posts:</h2>
+        <textarea
+          className={styles.main__textarea}
+          placeholder="write somthing..."
+        ></textarea>
       </div>
-      <div>{itemPost}</div>
-    </div>
+
+      <div className={styles.main__btnSection}>
+        <button className={styles.main__btn}>Add Post</button>
+      </div>
+
+      <div className={styles.main__posts}>
+        <div className={styles.main__post}>{itemPost}</div>
+      </div>
+    </section>
   );
 };
 

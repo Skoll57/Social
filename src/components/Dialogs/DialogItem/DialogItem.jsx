@@ -3,11 +3,13 @@ import { NavLink } from "react-router-dom";
 
 const DialogItem = (props) => {
   return (
-    <div>
+    <div className={s.list}>
       <NavLink
         to={"/dialogs/" + props.id}
         className={(navData) => (navData.isActive ? s.active : s.item)}
       >
+        <img src={props.avatar} />
+        <br />
         {props.name}
       </NavLink>
     </div>

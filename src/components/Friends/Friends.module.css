@@ -1,6 +1,5 @@
-.friends {
+.container {
   box-sizing: border-box;
-  background-color: rgb(220, 225, 233);
   min-height: 100vh;
   padding: 10px 7vh;
   margin: 0 auto;
@@ -14,9 +13,12 @@
   font-family: sans-serif;
 }
 
-.itemBox {
+.itemBox .item {
+  margin: 10px 20px;
+  padding: 20px;
   display: flex;
-  align-content: space-between;
   flex-wrap: wrap;
-  gap: 40px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
 }

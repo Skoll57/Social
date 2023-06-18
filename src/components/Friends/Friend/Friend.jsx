@@ -1,14 +1,14 @@
 import s from "./Friend.module.css";
+import { NavLink } from "react-router-dom";
 
-const Friend = () => {
+const Friend = (props) => {
   return (
     <div className={s.friend}>
       <div className={s.item}>
-        <img
-          src="https://static.vecteezy.com/system/resources/previews/015/390/235/original/bored-ape-nft-isolated-on-white-background-non-fungible-token-blockchain-monkey-illustration-free-vector.jpg"
-          alt="avatar"
-        />
-        <span>FullName FullName</span>
+        <img src={props.avatar} alt="avatar" />
+        <NavLink className={s.fullName} to={"/friend/" + props.id}>
+          {props.fullName}
+        </NavLink>
       </div>
     </div>
   );

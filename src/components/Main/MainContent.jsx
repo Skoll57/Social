@@ -1,10 +1,10 @@
-import s from "./MainContent.module.css";
+import styles from "./MainContent.module.css";
 import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Main = (props) => {
   return (
-    <div className={s.main}>
+    <div className={styles.main}>
       <ProfileInfo />
       <MyPosts posts={props.state.posts} />
     </div>
