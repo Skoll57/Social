@@ -1,39 +1,34 @@
-section {
-  box-sizing: border-box;
+.dialogs {
   display: flex;
   flex-wrap: nowrap;
-  height: 100%;
 }
 
-h3 {
+.dialogs__item {
+  min-width: 35%;
+  padding: 0 4px;
+  border-right: 2px solid rgb(90, 86, 86);
+}
+
+.dialogs__title {
   text-transform: uppercase;
+  text-align: center;
 }
 
-.dialogs {
-  min-width: 20vh;
-  padding: 10px 20px;
-  border-right: 2px solid rgb(141, 131, 131);
-  color: rgb(46, 42, 42);
-  font-size: 16px;
-  font-weight: 700;
+.dialogs__dialog {
+  text-align: center;
 }
 
-.item {
-  margin: 10px auto;
-  list-style-type: none;
-  color: black;
-}
-
-.messages {
-  box-sizing: border-box;
+.dialogs__messages {
   width: 100%;
-  padding: 10px 10px;
-  font-size: 16px;
-  font-weight: 600;
-  color: black;
-  padding-left: 20px;
+  padding: 0 4px;
+  margin: 0 auto;
 }
 
-.messages h3 {
-  text-transform: uppercase;
+.dialogs__inputItem {
+  display: block;
+}
+
+.dialogs__textarea {
+  border: none;
+  background-color: cornflowerblue;
 }

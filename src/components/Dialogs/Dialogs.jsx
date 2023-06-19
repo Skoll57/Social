@@ -1,36 +1,48 @@
-import s from "./Dialogs.module.css";
-import DialogItem from "./DialogItem/DialogItem";
+import styles from "./Dialogs.module.css";
+import Dialog from "./DialogItem/DialogItem";
 import MessageItem from "./MessageItem/MessageItem";
+import React from "react";
 
 const Dialogs = (props) => {
-  // Mapping
-  let itemDialogs = props.state.persone.map((persone) => {
+  let itemDialog = props.state.persone.map((persone) => {
     return (
-      <li>
-        <DialogItem
-          name={persone.fullName}
-          id={persone.id}
-          avatar={persone.avatar}
-        />
-      </li>
+      <Dialog name={persone.fullName} id={persone.id} avatar={persone.avatar} />
     );
   });
 
-  let itemMessages = props.state.messages.map((message) => {
+  let itemMessage = props.state.messages.map((message) => {
     return <MessageItem messageText={message.message} />;
   });
 
-  //Return
+  let messageText = React.createRef();
+
+  let getText = () => {
+    console.log(messageText.current.value);
+  };
+
   return (
-    <section>
-      <div className={s.dialogs}>
-        <h3>Dialogs</h3>
-        <div className={s.item}>{itemDialogs}</div>
+    <section className={styles.dialogs}>
+      <div className={styles.dialogs__item}>
+        <h3 className={styles.dialogs__title}>Dialogs</h3>
+        <div className={styles.dialogs__dialog}>{itemDialog}</div>
       </div>
 
-      <div className={s.messages}>
-        <h3>Messages</h3>
-        {itemMessages}
+      <div className={styles.dialogs__messages}>
+        <div className={styles.dialogs__messageItem}>
+          <h3 className={styles.dialogs__title}>Messages</h3>
+          <div className={styles.dialogs__message}>{itemMessage}</div>
+        </div>
+
+        <div className={styles.dialogs__inputItem}>
+          <textarea
+            className={styles.dialogs__textarea}
+            ref={messageText}
+          ></textarea>
+          <br />
+          <button className={styles.dialogs__btn} onClick={getText}>
+            Send message
+          </button>
+        </div>
       </div>
     </section>
   );

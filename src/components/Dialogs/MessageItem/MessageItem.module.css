@@ -1,4 +1,20 @@
 .message {
-  padding: 8px 0 2px 2px;
-  margin: 40px 16px 16px 16px;
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px 20px 40px 20px;
+  margin: 10px auto;
+  background: linear-gradient(rgba(94, 94, 94, 0.2), rgba(128, 128, 128, 0.2));
+  border-radius: 15px;
+  min-height: 6vw;
+  min-width: 80%;
+}
+
+.message__date {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  float: left;
+  padding: 10px 0 0 0;
 }

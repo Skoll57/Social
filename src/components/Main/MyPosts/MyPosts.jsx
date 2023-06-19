@@ -1,3 +1,4 @@
+import React from "react";
 import styles from "./MyPosts.module.css";
 import Post from "./Posts/Post";
 
@@ -12,6 +13,12 @@ const MyPosts = (props) => {
     );
   });
 
+  let newPostElement = React.createRef();
+
+  let addPost = () => {
+    console.log(newPostElement.current.value);
+  };
+
   return (
     <section className={styles.main}>
       <div className={styles.main__wallSection}>
@@ -19,11 +26,14 @@ const MyPosts = (props) => {
         <textarea
           className={styles.main__textarea}
           placeholder="write somthing..."
+          ref={newPostElement}
         ></textarea>
       </div>
 
       <div className={styles.main__btnSection}>
-        <button className={styles.main__btn}>Add Post</button>
+        <button className={styles.main__btn} onClick={addPost}>
+          Add Post
+        </button>
       </div>
 
       <div className={styles.main__posts}>
