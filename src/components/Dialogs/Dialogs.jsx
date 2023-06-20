@@ -14,10 +14,10 @@ const Dialogs = (props) => {
     return <MessageItem messageText={message.message} />;
   });
 
-  let messageText = React.createRef();
+  let dialogText = React.createRef();
 
-  let getText = () => {
-    console.log(messageText.current.value);
+  let dialogTextValue = () => {
+    console.log(dialogText.current.value);
   };
 
   return (
@@ -36,10 +36,10 @@ const Dialogs = (props) => {
         <div className={styles.dialogs__inputItem}>
           <textarea
             className={styles.dialogs__textarea}
-            ref={messageText}
+            ref={dialogText}
           ></textarea>
           <br />
-          <button className={styles.dialogs__btn} onClick={getText}>
+          <button className={styles.dialogs__btn} onClick={dialogTextValue}>
             Send message
           </button>
         </div>

@@ -35,12 +35,13 @@
   display: inline-block;
   text-align: left;
   padding-top: 14px;
+  width: 100%;
 }
 
 .post__message {
   max-width: 90%;
-  float: right;
-  padding-bottom: 16px;
+  padding: 10px 0 16px 0;
+  margin: 0 auto;
 }
 
 .post__btn {

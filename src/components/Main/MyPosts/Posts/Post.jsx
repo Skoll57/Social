@@ -15,14 +15,7 @@ const Post = (props) => {
         </div>
 
         <div className={styles.post__messages}>
-          <div className={styles.post__message}>
-            {props.message} Lorem, ipsum dolor sit amet consectetur adipisicing
-            elit. Nemo error enim itaque officiis. Obcaecati ab et impedit.
-            Eveniet nostrum voluptatum velit ipsa! Nulla enim quas cum, amet
-            magni obcaecati sequi exercitationem non illo molestiae maxime
-            dolorum quo reprehenderit natus velit. Et esse quisquam incidunt
-            ipsa atque unde, vero alias exercitationem?
-          </div>
+          <div className={styles.post__message}>{props.message}</div>
         </div>
 
         <div className={styles.post__footer}>
