@@ -25,7 +25,7 @@ const Post = (props) => {
           </button>
 
           <div className={styles.post__date}>
-            <p className={styles.post__dateItem}>24 июня 2018</p>
+            <p className={styles.post__dateItem}>{props.date}</p>
           </div>
         </div>
       </div>

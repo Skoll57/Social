@@ -15,7 +15,12 @@ let state = {
         dislikeCount: 5,
         id: 2,
       },
-      { message: "It turns out?", likeCount: 8, dislikeCount: 1, id: 3 },
+      {
+        message: "It turns out?",
+        likeCount: 8,
+        dislikeCount: 1,
+        id: 3,
+      },
       {
         message:
           "I'm moving towards my goal with small steps... And i need more word! More! more! more! I'm moving towards my goal with small steps... And i need more word! More! more! more!",
@@ -23,7 +28,12 @@ let state = {
         dislikeCount: 2,
         id: 4,
       },
-      { message: "I'm happy for you!", likeCount: 1, dislikeCount: 0, id: 5 },
+      {
+        message: "I'm happy for you!",
+        likeCount: 1,
+        dislikeCount: 0,
+        id: 5,
+      },
     ],
   },
   dialogsPage: {
