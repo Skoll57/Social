@@ -35,11 +35,11 @@
   display: inline-block;
   text-align: left;
   padding-top: 14px;
-  width: 100%;
+  max-width: 100vh;
 }
 
 .post__message {
-  max-width: 90%;
+  max-width: 90vh;
   padding: 10px 0 16px 0;
   margin: 0 auto;
 }

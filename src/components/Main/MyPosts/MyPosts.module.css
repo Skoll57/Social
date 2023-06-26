@@ -20,6 +20,7 @@
   background-color: rgb(211, 201, 201);
   min-height: 15vh;
   min-width: 99%;
+  max-width: 99%;
   border: none;
 }
 

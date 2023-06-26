@@ -35,6 +35,7 @@ let state = {
         id: 5,
       },
     ],
+    newPostText: "",
   },
   dialogsPage: {
     persone: [
@@ -123,15 +124,21 @@ let state = {
   },
 };
 
-export let addPost = (postMessage) => {
+export let addPost = () => {
   let newPost = {
     id: 6,
-    message: postMessage,
+    message: state.mainPage.newPostText,
     likeCount: 0,
     dislikeCount: 0,
   };
 
   state.mainPage.posts.push(newPost);
+  state.mainPage.newPostText = "";
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (newText) => {
+  state.mainPage.newPostText = newText;
   rerenderEntireTree(state);
 };
 

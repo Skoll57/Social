@@ -16,10 +16,12 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    let postMessage = newPostElement.current.value;
-    props.addPost(postMessage);
+    props.addPost();
+  };
 
-    postMessage = "";
+  let onPostChange = () => {
+    let postMessage = newPostElement.current.value;
+    props.updateNewPostText(postMessage);
   };
 
   return (
@@ -27,10 +29,13 @@ const MyPosts = (props) => {
       <div className={styles.main__wallSection}>
         <h2 className={styles.main__title}>My posts:</h2>
         <textarea
+          maxLength="200"
           className={styles.main__textarea}
           placeholder="write somthing..."
           ref={newPostElement}
-        ></textarea>
+          onChange={onPostChange}
+          value={props.newPostText}
+        />
       </div>
 
       <div className={styles.main__btnSection}>
