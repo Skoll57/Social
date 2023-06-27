@@ -29,8 +29,8 @@ const MyPosts = (props) => {
       <div className={styles.main__wallSection}>
         <h2 className={styles.main__title}>My posts:</h2>
         <textarea
-          maxLength="200"
           className={styles.main__textarea}
+          maxLength="100"
           placeholder="write somthing..."
           ref={newPostElement}
           onChange={onPostChange}

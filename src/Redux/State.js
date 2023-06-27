@@ -81,6 +81,7 @@ let state = {
       { id: 2, message: "HELLO" },
       { id: 3, message: "HEY" },
     ],
+    newMessageText: "",
   },
   friendsPage: {
     persone: [
@@ -137,8 +138,24 @@ export let addPost = () => {
   rerenderEntireTree(state);
 };
 
-export let updateNewPostText = (newText) => {
-  state.mainPage.newPostText = newText;
+export let addMessage = () => {
+  let newMessage = {
+    id: 4,
+    message: state.dialogsPage.newMessageText,
+  };
+
+  state.dialogsPage.messages.push(newMessage);
+  state.dialogsPage.newMessageText = "";
+  rerenderEntireTree(state);
+};
+
+export let updateNewPostText = (postMessage) => {
+  state.mainPage.newPostText = postMessage;
+  rerenderEntireTree(state);
+};
+
+export let updateMessageText = (messageText) => {
+  state.dialogsPage.newMessageText = messageText;
   rerenderEntireTree(state);
 };
 

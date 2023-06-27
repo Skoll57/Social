@@ -8,7 +8,6 @@ import News from "./components/News/News";
 import Settings from "./components/Settings/Settings";
 import Friends from "./components/Friends/Friends";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import { addPost } from "./Redux/State";
 
 const App = (props) => {
   return (
@@ -32,8 +31,10 @@ const App = (props) => {
               path="/dialogs/*"
               element={
                 <Dialogs
-                  state={props.state.dialogsPage}
+                  dialogsPage={props.state.dialogsPage}
                   avatar={props.state.persone}
+                  addMessage={props.addMessage}
+                  updateMessageText={props.updateMessageText}
                 />
               }
             />
