@@ -1,4 +1,4 @@
-import rerenderEntireTree from "../render";
+let rerenderEntireTree;
 
 let state = {
   mainPage: {
@@ -133,9 +133,11 @@ export let addPost = () => {
     dislikeCount: 0,
   };
 
-  state.mainPage.posts.push(newPost);
-  state.mainPage.newPostText = "";
-  rerenderEntireTree(state);
+  if (newPost.message.length >= 1 && newPost.message !== " ") {
+    state.mainPage.posts.push(newPost);
+    state.mainPage.newPostText = "";
+    rerenderEntireTree(state);
+  }
 };
 
 export let addMessage = () => {
@@ -144,12 +146,14 @@ export let addMessage = () => {
     message: state.dialogsPage.newMessageText,
   };
 
-  state.dialogsPage.messages.push(newMessage);
-  state.dialogsPage.newMessageText = "";
-  rerenderEntireTree(state);
+  if (newMessage.message.length >= 1 && newMessage.message !== " ") {
+    state.dialogsPage.messages.push(newMessage);
+    state.dialogsPage.newMessageText = "";
+    rerenderEntireTree(state);
+  }
 };
 
-export let updateNewPostText = (postMessage) => {
+export let updatePostText = (postMessage) => {
   state.mainPage.newPostText = postMessage;
   rerenderEntireTree(state);
 };
@@ -157,6 +161,10 @@ export let updateNewPostText = (postMessage) => {
 export let updateMessageText = (messageText) => {
   state.dialogsPage.newMessageText = messageText;
   rerenderEntireTree(state);
+};
+
+export const subscribe = (observer) => {
+  rerenderEntireTree = observer;
 };
 
 export default state;

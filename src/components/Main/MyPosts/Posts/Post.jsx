@@ -1,5 +1,4 @@
 import styles from "./Post.module.css";
-// import styles from "./icons/like.png";
 
 const Post = (props) => {
   return (
