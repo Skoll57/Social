@@ -17,12 +17,12 @@ const Dialogs = (props) => {
   let dialogText = React.createRef();
 
   let addMessage = () => {
-    props.addMessage();
+    props.dispatch({ type: "ADD-MESSAGE" });
   };
 
   let onMessageChange = () => {
     let messageText = dialogText.current.value;
-    props.updateMessageText(messageText);
+    props.dispatch({ type: "UPDATE-MESSAGE-TEXT", messageText: messageText });
   };
 
   return (

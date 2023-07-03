@@ -19,11 +19,7 @@ const App = (props) => {
           <Route
             path="/profile"
             element={
-              <Main
-                mainPage={props.state.mainPage}
-                addPost={props.addPost}
-                updateNewPostText={props.updateNewPostText}
-              />
+              <Main mainPage={props.state.mainPage} dispatch={props.dispatch} />
             }
           />
           <Route
@@ -32,8 +28,7 @@ const App = (props) => {
               <Dialogs
                 dialogsPage={props.state.dialogsPage}
                 avatar={props.state.persone}
-                addMessage={props.addMessage}
-                updateMessageText={props.updateMessageText}
+                dispatch={props.dispatch}
               />
             }
           />

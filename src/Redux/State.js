@@ -124,52 +124,49 @@ let store = {
     },
   },
 
+  _callSubscriber() {},
+
   getState() {
     return this._state;
   },
 
-  _callSubscriber() {},
-
-  addPost() {
-    let newPost = {
-      id: 6,
-      message: this._state.mainPage.newPostText,
-      likeCount: 0,
-      dislikeCount: 0,
-    };
-
-    if (newPost.message.length >= 1 && newPost.message !== " ") {
-      this._state.mainPage.posts.push(newPost);
-      this._state.mainPage.newPostText = "";
-      this._callSubscriber(this._state);
-    }
-  },
-
-  addMessage() {
-    let newMessage = {
-      id: 4,
-      message: this._state.dialogsPage.newMessageText,
-    };
-
-    if (newMessage.message.length >= 1 && newMessage.message !== " ") {
-      this._state.dialogsPage.messages.push(newMessage);
-      this._state.dialogsPage.newMessageText = "";
-      this._callSubscriber(this._state);
-    }
-  },
-
-  updateMessageText(messageText) {
-    this._state.dialogsPage.newMessageText = messageText;
-    this._callSubscriber(this._state);
-  },
-
-  updateNewPostText(postMessage) {
-    this._state.mainPage.newPostText = postMessage;
-    this._callSubscriber(this._state);
-  },
-
   subscribe(observer) {
     this._callSubscriber = observer;
+  },
+
+  // For storage changes
+  dispatch(action) {
+    if (action.type === "ADD-POST") {
+      let newPost = {
+        id: 6,
+        message: this._state.mainPage.newPostText,
+        likeCount: 0,
+        dislikeCount: 0,
+      };
+
+      if (newPost.message.length >= 1 && newPost.message !== " ") {
+        this._state.mainPage.posts.push(newPost);
+        this._state.mainPage.newPostText = "";
+        this._callSubscriber(this._state);
+      }
+    } else if (action.type === "ADD-MESSAGE") {
+      let newMessage = {
+        id: 4,
+        message: this._state.dialogsPage.newMessageText,
+      };
+
+      if (newMessage.message.length >= 1 && newMessage.message !== " ") {
+        this._state.dialogsPage.messages.push(newMessage);
+        this._state.dialogsPage.newMessageText = "";
+        this._callSubscriber(this._state);
+      }
+    } else if (action.type === "UPDATE-MESSAGE-TEXT") {
+      this._state.dialogsPage.newMessageText = action.messageText;
+      this._callSubscriber(this._state);
+    } else if (action.type === "UPDATE-NEW-POST-TEXT") {
+      this._state.mainPage.newPostText = action.postMessage;
+      this._callSubscriber(this._state);
+    }
   },
 };
 
