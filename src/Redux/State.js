@@ -1,3 +1,6 @@
+import mainReducer from "./mainReducer";
+import dialogsReducer from "./dialogsReducer";
+
 let store = {
   _state: {
     mainPage: {
@@ -136,56 +139,11 @@ let store = {
 
   // For storage changes
   dispatch(action) {
-    if (action.type === ADD_POST) {
-      let newPost = {
-        id: 6,
-        message: this._state.mainPage.newPostText,
-        likeCount: 0,
-        dislikeCount: 0,
-      };
+    this._state.mainPage = mainReducer(this._state.mainPage, action);
+    this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
 
-      if (newPost.message.length >= 1 && newPost.message !== " ") {
-        this._state.mainPage.posts.push(newPost);
-        this._state.mainPage.newPostText = "";
-        this._callSubscriber(this._state);
-      }
-    } else if (action.type === ADD_MESSAGE) {
-      let newMessage = {
-        id: 4,
-        message: this._state.dialogsPage.newMessageText,
-      };
-
-      if (newMessage.message.length >= 1 && newMessage.message !== " ") {
-        this._state.dialogsPage.messages.push(newMessage);
-        this._state.dialogsPage.newMessageText = "";
-        this._callSubscriber(this._state);
-      }
-    } else if (action.type === UPDATE_MESSAGE_TEXT) {
-      this._state.dialogsPage.newMessageText = action.messageText;
-      this._callSubscriber(this._state);
-    } else if (action.type === UPDATE_NEW_POST_TEXT) {
-      this._state.mainPage.newPostText = action.postMessage;
-      this._callSubscriber(this._state);
-    }
+    this._callSubscriber(this._state);
   },
 };
-
-// Action Creator
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
-export const updateMessageTextActionCreator = (messageText) => {
-  return { type: UPDATE_MESSAGE_TEXT, messageText: messageText };
-};
-
-export const addPostActionCreator = () => ({ type: ADD_POST });
-export const updateNewPostTextActionCreator = (postMessage) => {
-  return { type: UPDATE_NEW_POST_TEXT, postMessage: postMessage };
-};
-
-// Action Type
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";
-
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
 
 export default store;

@@ -5,7 +5,7 @@ import React from "react";
 import {
   addMessageActionCreator,
   updateMessageTextActionCreator,
-} from "../../Redux/State";
+} from "../../Redux/dialogsReducer";
 
 const Dialogs = (props) => {
   let itemDialog = props.dialogsPage.persone.map((persone) => {
@@ -18,14 +18,12 @@ const Dialogs = (props) => {
     return <MessageItem messageText={message.message} />;
   });
 
-  let dialogText = React.createRef();
-
   let addMessage = () => {
     props.dispatch(addMessageActionCreator());
   };
 
-  let onMessageChange = () => {
-    let messageText = dialogText.current.value;
+  let onMessageChange = (event) => {
+    let messageText = event.target.value;
     props.dispatch(updateMessageTextActionCreator(messageText));
   };
 
@@ -47,7 +45,6 @@ const Dialogs = (props) => {
             className={styles.dialogs__textarea}
             maxLength="70"
             placeholder="Message Text"
-            ref={dialogText}
             value={props.dialogsPage.newMessageText}
             onChange={onMessageChange}
           />
