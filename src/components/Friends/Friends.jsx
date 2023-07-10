@@ -3,7 +3,7 @@ import Friend from "./Friend/Friend";
 
 const Friends = (props) => {
   // Mapping
-  let friendItem = props.state.persone.map((friend) => {
+  let friendItem = props.friendsPage.persone.map((friend) => {
     return (
       <Friend
         fullName={friend.fullName}

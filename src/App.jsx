@@ -32,13 +32,13 @@ const App = (props) => {
               />
             }
           />
+          <Route
+            path="/friend/*"
+            element={<Friends friendsPage={props.state.friendsPage} />}
+          />
           <Route path="/news" element={<News />} />
           <Route path="/music" element={<Music />} />
           <Route path="/settings" element={<Settings />} />
-          <Route
-            path="/friend/*"
-            element={<Friends state={props.state.friendsPage} />}
-          />
         </Routes>
       </div>
     </div>

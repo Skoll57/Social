@@ -1,13 +1,3 @@
-// Action Type
-const ADD_MESSAGE = "ADD-MESSAGE";
-const UPDATE_MESSAGE_TEXT = "UPDATE-MESSAGE-TEXT";
-
-// Action Creator
-export const addMessageActionCreator = () => ({ type: ADD_MESSAGE });
-export const updateMessageTextActionCreator = (messageText) => {
-  return { type: UPDATE_MESSAGE_TEXT, messageText: messageText };
-};
-
 let initialState = {
   persone: [
     {
@@ -47,35 +37,10 @@ let initialState = {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFtTwXSsU-Pju-DU8LKAf1_422YMvDKCdg6tQ5GyaxmqdPb4F7mU6w7RX4JYai9PyAW2s&usqp=CAU",
     },
   ],
-  messages: [
-    { id: 1, message: "HI" },
-    { id: 2, message: "HELLO" },
-    { id: 3, message: "HEY" },
-  ],
-  newMessageText: "",
 };
 
-const dialogsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case ADD_MESSAGE:
-      let newMessage = {
-        id: 4,
-        message: state.newMessageText,
-      };
-
-      if (newMessage.message.length >= 1 && newMessage.message !== " ") {
-        state.messages.push(newMessage);
-        state.newMessageText = "";
-      }
-      return state;
-
-    case UPDATE_MESSAGE_TEXT:
-      state.newMessageText = action.messageText;
-      return state;
-
-    default:
-      return state;
-  }
+const friendReducer = (state = initialState, action) => {
+  return state;
 };
 
-export default dialogsReducer;
+export default friendReducer;
